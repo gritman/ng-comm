@@ -8,11 +8,9 @@ import {PriceQuote} from './price-quote/price-quote.component';
 })
 export class AppComponent {
 
-  stock = '';
-
   priceQuote: PriceQuote = new PriceQuote('', 0);
 
-  priceQuoteHandler(event: PriceQuote) {
+  buyHandler(event: PriceQuote) {
     this.priceQuote = event;
   }
 }

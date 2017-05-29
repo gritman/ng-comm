@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {PriceQuote} from '../price-quote/price-quote.component';
 
 @Component({
   selector: 'app-order',
@@ -7,16 +8,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  @Input() // 如果希望父组件传递该属性到当前组件(子组件),必须声明此注解
-  stockCode: string;
-
   @Input()
-  amount: number;
+  priceQuote: PriceQuote;
 
   constructor() {
-    setInterval(() => {
-      this.stockCode = 'Apple';
-    }, 3000);
+
   }
 
   ngOnInit() {

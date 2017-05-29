@@ -13,6 +13,9 @@ export class PriceQuoteComponent implements OnInit {
   @Output('priceChange') // 如果不写priceChange,外部捕获时直接用变量名
   lastPriceQuote: EventEmitter<PriceQuote> = new EventEmitter();
 
+  @Output()
+  buy: EventEmitter<PriceQuote> = new EventEmitter();
+
   constructor() {
     setInterval(() => {
       const priceQuote: PriceQuote = new PriceQuote(this.stockCode, 100 * Math.random());
@@ -22,6 +25,10 @@ export class PriceQuoteComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  buyStock(event) {
+    this.buy.emit(new PriceQuote(this.stockCode, this.price));
   }
 
 }
