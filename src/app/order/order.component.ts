@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  @Input()
+  @Input() // 如果希望父组件传递该属性到当前组件(子组件),必须声明此注解
   stockCode: string;
 
   @Input()
@@ -23,3 +23,8 @@ export class OrderComponent implements OnInit {
   }
 
 }
+
+
+
+
+
